@@ -18,4 +18,4 @@ favicon('https://github.com/favicon.ico');
 
 That's it!
 
-heres an example: https://oxmc.github.io/favicon.js/example.html
+heres an example: <a href="https://oxmc.github.io/favicon.js/example.html">https://oxmc.github.io/favicon.js/example.html</a>
