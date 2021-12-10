@@ -17,3 +17,5 @@ favicon('https://github.com/favicon.ico');
 ```
 
 That's it!
+
+heres an example: https://oxmc.github.io/favicon.js/example.html
