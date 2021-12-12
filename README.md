@@ -19,6 +19,7 @@ favicon('https://github.com/favicon.ico');
 That's it!
 
 heres an example: <a href="https://fjs.oxmc.xyz/example.html">https://fjs.oxmc.xyz/example.html</a>
+<br>
 ©2021-2022 Domain by <a href="https://givinghawk.xyz">Givinghawk</a> made by <a href="https://oxmc.xyz">oxmc</a>
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Favicon.JS">
