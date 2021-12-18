@@ -27,11 +27,17 @@ async function favicon(icon, mode) {
     throw new Error('No icon provided!');
   };
   var mod = mode || "png";
+  var typ;
+  if (mod == "ico") {
+	typ = "image/x-icon";
+  } else {
+	typ = "image/gif";
+  };
   var favicon = document.querySelector("link[rel~='icon']");
   if (!favicon) {
     favicon = document.createElement('link');
     favicon.rel = 'shortcut icon';
-    favicon.type = 'image/gif';
+    favicon.type = typ;
     document.getElementsByTagName('head')[0].appendChild(favicon);
   };
   /*Check for valid image*/
@@ -59,11 +65,11 @@ async function favicon(icon, mode) {
             throw new Error('Favicon was not set!');
           };
         } else if (value == "timeout") {
-	  throw new Error(`Image: ${icon}, timedout, favicon was not set!`);
+	  throw new Error(`Image timedout: favicon was not set!`);
         }
       },
       function(error) {
-        throw new Error(`Image: ${icon}, is an invalid image, favicon was not set!`);
+        throw new Error(`Invalid image: favicon was not set!`);
       }
     );
   }
