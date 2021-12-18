@@ -22,7 +22,7 @@ function testImage(url) {
 
 async function favicon(icon, mode) {
   if (icon == null || icon == "") {
-	throw new Error('No icon provided!');
+    throw new Error('No icon provided!');
   };
   var mod = mode || "png";
   var favicon = document.querySelector("link[rel~='icon']");
@@ -34,7 +34,7 @@ async function favicon(icon, mode) {
   };
   /*Check for valid image*/
   if (mod == "base64") {
-	const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+    const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
     if (base64regex.test(icon)) {
       /*Change icon now*/
       favicon.href = icon;
@@ -57,11 +57,11 @@ async function favicon(icon, mode) {
             throw new Error('Favicon was not set!');
           };
         } else if (value == "timeout") {
-		  throw new Error(`Image: ${icon}, timedout, favicon was not set!`);
+	  throw new Error(`Image: ${icon}, timedout, favicon was not set!`);
         }
       },
       function(error) {
-		throw new Error(`Image: ${icon}, is an invalid image, favicon was not set!`);
+        throw new Error(`Image: ${icon}, is an invalid image, favicon was not set!`);
       }
     );
   }
