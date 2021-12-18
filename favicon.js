@@ -21,7 +21,7 @@ function testImage(url) {
 }
 
 async function favicon(icon, mode) {
-  var mod = mode || "png";
+  var mode = mode || "png";
   var favicon = document.querySelector("link[rel~='icon']");
   if (!favicon) {
     favicon = document.createElement('link');
