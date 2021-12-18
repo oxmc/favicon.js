@@ -1,3 +1,5 @@
+/* favicon.js v1.3.0 | MIT License | Copyright 2021-2022 oxmc */
+
 function testImage(url) {
   return new Promise(function (resolve, reject) {
     var timeout = 5000;
