@@ -20,7 +20,8 @@ function testImage(url) {
   });
 }
 
-async function favicon(icon) {
+async function favicon(icon, mode) {
+  var mod = mode || "png";
   var favicon = document.querySelector("link[rel~='icon']");
   if (!favicon) {
     favicon = document.createElement('link');
@@ -29,23 +30,36 @@ async function favicon(icon) {
     document.getElementsByTagName('head')[0].appendChild(favicon);
   };
   /*Check for valid image*/
-  var validimage = testImage(icon);
-  validimage.then(
-    function(value) {
-      if (value == "success") {
-        /*Change icon now*/
-        favicon.href = icon;
-        if (favicon.href == icon) {
-          console.log(`Image: ${icon}, Set successfully!`);
-        } else {
-          console.log(`Image: ${icon}, Was not set!`);
+  if (mode == "base64") {
+    const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+    if (base64regex.test(icon)) {
+      /*Change icon now*/
+      favicon.href = icon;
+      if (favicon.href == icon) {
+        console.log(`favicon.js: favicon Set successfully!`);
+      } else {
+        console.log(`favicon.js: favicon Was not set!`);
+      };
+    };
+  } else {
+    var validimage = testImage(icon);
+    validimage.then(
+     function(value) {
+        if (value == "success") {
+          /*Change icon now*/
+          favicon.href = icon;
+          if (favicon.href == icon) {
+            console.log(`favicon.js: favicon Set successfully!`);
+          } else {
+            console.log(`favicon.js: favicon Was not set!`);
+          };
+        } else if (value == "timeout") {
+          console.log(`Image: ${icon}, timedout, favicon was not set!`);
         };
-      } else if (value == "timeout") {
-        console.log(`Image: ${icon}, timedout, favicon was not set!`);
-      }
-    },
-    function(error) {
-      console.log(`Image: ${icon}, is an invalid image, favicon was not set!`);
-    }
-  );
+      },
+      function(error) {
+        console.log(`Image: ${icon}, is an invalid image, favicon was not set!`);
+      };
+    );
+  };
 };
