@@ -28,7 +28,14 @@ async function favicon(icon, mode) {
   if (icon == null || icon == "") {
     throw new Error('No icon provided!');
   };
-  var mod = mode || if (base64regex.test(icon)) {return "base64";}; || "png";
+  var mod;
+  if (mode) {
+    mod = mode;
+  } else if (base64regex.test(icon)) {
+    mod = "base64";
+  } else {
+    mod = "png";
+  };
   var typ;
   if (mod == "ico") {
 	typ = "image/x-icon";
