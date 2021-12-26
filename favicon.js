@@ -1,5 +1,7 @@
 /* favicon.js v1.3.0 | MIT License | Copyright 2021-2022 oxmc */
 
+const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+
 function testImage(url) {
   return new Promise(function (resolve, reject) {
     var timeout = 5000;
@@ -26,7 +28,7 @@ async function favicon(icon, mode) {
   if (icon == null || icon == "") {
     throw new Error('No icon provided!');
   };
-  var mod = mode || "png";
+  var mod = mode || if(base64regex.test(icon)){return "base64";}; || "png";
   var typ;
   if (mod == "ico") {
 	typ = "image/x-icon";
@@ -42,7 +44,6 @@ async function favicon(icon, mode) {
   };
   /*Check for valid image*/
   if (mod == "base64") {
-    const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
     if (base64regex.test(icon)) {
       /*Change icon now*/
       favicon.href = icon;
