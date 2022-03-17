@@ -1,4 +1,4 @@
-/* favicon.js v1.3.0 | MIT License | Copyright 2021-2022 oxmc */
+/* favicon.js v1.3.0 | MIT License | Copyright 2021-2023 oxmc */
 
 const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
 
