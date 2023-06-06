@@ -1,30 +1,29 @@
 /* favicon.js v1.3.0 | MIT License | Copyright 2021-2023 oxmc */
 
-const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
-
-function testImage(url) {
-  return new Promise(function (resolve, reject) {
-    var timeout = 5000;
-    var timer, img = new Image();
-    img.onerror = img.onabort = function () {
-      clearTimeout(timer);
-      reject("error");
-    };
-    img.onload = function () {
-      clearTimeout(timer);
-      resolve("success");
-    };
-    timer = setTimeout(function () {
-      // reset .src to invalid URL so it stops previous
-      // loading, but doesn't trigger new load
-      img.src = "//!!!!/test.jpg";
-      reject("timeout");
-    }, timeout);
-    img.src = url;
-  });
-}
-
 async function favicon(icon, mode) {
+  const base64regex = /^([0-9a-zA-Z+/]{4})*(([0-9a-zA-Z+/]{2}==)|([0-9a-zA-Z+/]{3}=))?$/;
+
+  function testImage(url) {
+    return new Promise(function (resolve, reject) {
+      var timeout = 5000;
+      var timer, img = new Image();
+      img.onerror = img.onabort = function () {
+        clearTimeout(timer);
+        reject("error");
+      };
+      img.onload = function () {
+        clearTimeout(timer);
+        resolve("success");
+      };
+      timer = setTimeout(function () {
+        // reset .src to invalid URL so it stops previous
+        // loading, but doesn't trigger new load
+        img.src = "//!!!!/test.jpg";
+        reject("timeout");
+      }, timeout);
+      img.src = url;
+    });
+  }
   if (icon == null || icon == "") {
     throw new Error('No icon provided!');
   };
