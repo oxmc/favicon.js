@@ -6,7 +6,7 @@ A simple javascript library to change the page favicon.
 To use favicon.js, include it in your head element:
 ```html
 <head>
-  <script src="https://fjs.oxmc.xyz/favicon.min.js"></script>
+  <script src="https://oxmnc.is-a.dev/favicon.js/favicon.min.js"></script>
 </head>
 ```
 
@@ -18,7 +18,7 @@ favicon('https://github.com/favicon.ico');
 
 That's it!
 
-heres an example: <a href="https://fjs.oxmc.xyz/example.html">https://fjs.oxmc.xyz/example.html</a>
+heres an example: <a href="https://oxmnc.is-a.dev/favicon.js/example.html">https://oxmnc.is-a.dev/favicon.js/example.html</a>
 <br>
 ©2021-2022 Domain by <a href="https://givinghawk.xyz">Givinghawk</a> made by <a href="https://oxmc.xyz">oxmc</a>
 <meta name="twitter:card" content="summary">
@@ -27,8 +27,8 @@ heres an example: <a href="https://fjs.oxmc.xyz/example.html">https://fjs.oxmc.x
 <meta name="twitter:image" content="https://oxmc.xyz/assets/img/faviconjs-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Favicon.JS">
-<meta property="og:url" content="https://fjs.oxmc.xyz/">
-<meta property="og:image" content="https://og-image.xyz/og/Favicon.JS/Change the favicon with JS/fjs.oxmc.xyz{{s}}/https/menlo/shatteredfeelings/{{h}}fafafa/data.png">
+<meta property="og:url" content="https://oxmnc.is-a.dev/favicon.js/">
+<meta property="og:image" content="https://og-image.xyz/og/Favicon.JS/Change the favicon with JS/oxmnc.is-a.dev/favicon.js{{s}}/https/menlo/shatteredfeelings/{{h}}fafafa/data.png">
 <meta property="og:description" content="A simple javascript library to change the page favicon.">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
