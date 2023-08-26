@@ -29,7 +29,7 @@ jobs:
         uses: nizarmah/auto-minify@v2.1
         with:
           output: './dist/'
-          directory: 'OS-Detect.js'
+          directory: 'favicon.js'
 
       # Auto commits minified files to the repository
       # Ignore it if you don't want to commit the files to the repository 
