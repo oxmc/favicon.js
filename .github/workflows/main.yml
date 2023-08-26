@@ -27,6 +27,9 @@ jobs:
 
       - name: Auto Minify
         uses: nizarmah/auto-minify@v2.1
+        with:
+          output: './dist/'
+          directory: './dist/OS-Detect.js'
 
       # Auto commits minified files to the repository
       # Ignore it if you don't want to commit the files to the repository 
